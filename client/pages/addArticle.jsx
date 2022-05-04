@@ -9,11 +9,15 @@ export function AddNewArticle({ user }) {
   const [topic, setTopic] = useState("");
   const [articleText, setArticleText] = useState("");
 
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   function handleSubmit(event) {
-    setAuthor(user.microsoft.name);
     console.log("Author" + author);
     event.preventDefault();
     createArticle({ author, title, topic, articleText });
+    refreshPage();
   }
 
   if (user.microsoft !== undefined) {
@@ -28,7 +32,7 @@ export function AddNewArticle({ user }) {
           onChangeValue={setArticleText}
         />
         <div>
-          <button>Submit</button>
+          <button onClick={() => setAuthor(user.microsoft.name)}>Submit</button>
         </div>
       </form>
     );

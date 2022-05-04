@@ -3,11 +3,7 @@ import React from "react";
 
 export function Profile({ user }) {
   if (!user || Object.keys(user).length === 0) {
-    return (
-      <Link to={"/login"} class={"header-btn"}>
-        Login
-      </Link>
-    );
+    return <h1>Please login first</h1>;
   }
 
   if (user.google !== undefined) {
