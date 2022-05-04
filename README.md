@@ -24,10 +24,13 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 
 ## Egenutfylling av funksjonelle krav
 
-* [ ] *legg inn krav fra eksamentekst*
+* [x] *Anonyme brukere skal se nyhetsaker når de kommer til nettsiden. Legg inn noen nyhetssaker for å demonstrere*
+* [x] *Brukere kan logge seg inn. Det anbefales at du implementerer at brukerne logger seg inn med Google, men andre mekanismer er også akseptabelt*
+* [x] *En bruker som er logget inn kan se på sin profilside (userinfo fra Google)*
+* [x] *Brukere skal forbli logget inn når de refresher websiden*
+* [x] *"Redaksjonelle brukere" kan logge seg inn med Active Directory. Det må fungere å logge seg inn med en Active Directory på skolens AD ( domain_hint=egms.no )*
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] *legg inn krav fra eksamentekst*
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+
 
 ## Egenutfylling av tekniske krav
 
@@ -39,11 +42,11 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Kommunikasjon mellom frontend (React) og backend (Express)
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Deployment til Heroku
+* [x] Deployment til Heroku
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Bruk av MongoDB
+* [x] Bruk av MongoDB
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] OpenID Connect
+* [x] OpenID Connect
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [ ] Web Sockets
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*

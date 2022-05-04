@@ -33,4 +33,5 @@ app.use((req, res, next) => {
 
 const server = app.listen(process.env.PORT || 3000, () => {
   console.log(`Started on http://localhost:${server.address().port}`);
+  console.log(`Link at Heroku: https://pg6301-exam-2022.herokuapp.com`);
 });

@@ -6,7 +6,9 @@ function TopicsCard({ topic }) {
   return (
     <>
       <div>
-        <p>{topic}</p>
+        <ul>
+          <p>{topic}</p>
+        </ul>
       </div>
     </>
   );
@@ -35,7 +37,7 @@ export function ListTopics() {
 
   return (
     <div>
-      <h1>Topics: </h1>
+      <h1 style={{ marginLeft: 40 }}>Topics: </h1>
       {data.map((article) => (
         <TopicsCard key={article._id} topic={article.topic} />
       ))}
