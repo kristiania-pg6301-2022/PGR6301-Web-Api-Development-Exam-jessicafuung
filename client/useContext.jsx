@@ -9,8 +9,8 @@ export const ApiContext = React.createContext({
   async listArticles(query) {
     return await fetchJSON("/api/news?" + new URLSearchParams(query));
   },
-  async createMovie(movie) {
-    return await postJSON("/api/movies", movie);
+  async createArticle(article) {
+    return await postJSON("/api/news", article);
   },
   async registerLogin(provider, login) {
     return await postJSON(`/api/login/${provider}`, login);

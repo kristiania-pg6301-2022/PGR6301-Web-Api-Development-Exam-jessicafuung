@@ -36,12 +36,13 @@ export function NewsApi(mongoDatabase) {
     ) {
       res.sendStatus(403);
     } else {
-      const { author, title, topic, releaseDate, articleText } = req.body;
-      const countries = [country];
+      var dateTime = new Date();
+      const { author, title, topic, articleText } = req.body;
       mongoDatabase
         .collection("articles")
-        .insertOne({ author, title, topic, releaseDate, articleText });
+        .insertOne({ author, title, topic, dateTime, articleText });
       res.sendStatus(200);
+      console.log("Date print: " + dateTime);
     }
   });
 

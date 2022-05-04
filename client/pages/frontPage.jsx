@@ -23,7 +23,7 @@ export function FrontPage() {
         <h3>should probably for loop</h3>
         <ul>
           <li>
-            <Link to={"/movies/new"}>Add new movie</Link>
+            <Link to={"/news/new"}>Add new movie</Link>
           </li>
           <li>
             <Link to={"/movies/new"}>Add new movie</Link>

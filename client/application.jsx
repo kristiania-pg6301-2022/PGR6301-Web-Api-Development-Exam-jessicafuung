@@ -8,11 +8,11 @@ import { FrontPage } from "./pages/frontPage";
 import { LoginPage } from "./pages/loginPage";
 import { Profile } from "./pages/profile";
 import { ListArticles } from "./pages/listArticles";
-//import { AddNewMovie } from "./pages/addNewMovie";
 
 import { useLoading } from "./useLoader";
 import { ApiContext } from "./useContext";
 import { ListTopics } from "./pages/listTopics";
+import { AddNewArticle } from "./pages/addArticle";
 
 function UserActions({ user }) {
   if (!user || Object.keys(user).length === 0) {
@@ -46,6 +46,9 @@ function UserActions({ user }) {
   if (user.microsoft !== undefined) {
     return (
       <>
+        <Link to={"/news/new"} class={"header-btn"}>
+          Write an article
+        </Link>
         <Link to={"/profile"} class={"header-btn"}>
           {user.microsoft?.name
             ? `Profile for ${user.microsoft.name}`
@@ -97,6 +100,10 @@ export function Application() {
             />
             <Route path={"/profile"} element={<Profile user={data?.user} />} />
             <Route path={"/news"} element={<ListArticles />} />
+            <Route
+              path={"/news/new"}
+              element={<AddNewArticle user={data?.user} />}
+            />
             <Route path={"*"} element={<h1>Not found</h1>} />
           </Routes>
         </main>
