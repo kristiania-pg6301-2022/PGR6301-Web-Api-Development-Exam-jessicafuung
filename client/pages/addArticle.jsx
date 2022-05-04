@@ -39,10 +39,10 @@ export function AddNewArticle({ user }) {
   }
 
   if (user.google !== undefined) {
-    return <h1>You have no access to this action!</h1>;
+    return <h1>You have no access to this action! Please login first</h1>;
   }
 
   if (!user || Object.keys(user).length === 0) {
-    return <h1>You have no access to this action!</h1>;
+    return <h1>You have no access to this action! Please login first </h1>;
   }
 }
