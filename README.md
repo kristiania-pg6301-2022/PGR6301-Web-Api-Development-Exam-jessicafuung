@@ -1,7 +1,7 @@
 # PG6301 eksamen <tittel på løsningen>
 
-[Heroku](link til heroku)
-[Test rapport](link til testrapport)
+* [x] [Heroku](https://pg6301-eksamen2022.herokuapp.com)
+* [ ] [Test rapport](link til testrapport) !!!!
 
 ## Tips
 
@@ -31,7 +31,7 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 
 ## Egenutfylling av tekniske krav
 
-* [ ] Oppsett av package.json, parcel, express, prettier
+* [x] Oppsett av package.json, parcel, express, prettier
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [ ] React Router
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
