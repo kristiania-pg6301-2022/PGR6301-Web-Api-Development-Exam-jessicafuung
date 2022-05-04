@@ -1,0 +1,66 @@
+{
+  "name": "pg6301-exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:client && npm run test:server",
+    "test:coverage": "npm run test:client:coverage && npm run test:server:coverage",
+    "test:client": "cd client && npm test",
+    "test:client:coverage": "cd client && npm test -- --collectCoverage",
+    "test:server": "cd server && npm test",
+    "test:server:coverage": "cd server && npm test -- --collectCoverage",
+    "build": "npm run build:server && npm run build:client",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "dev": "concurrently npm:dev:client npm:dev:server",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "start": "cd server && npm start",
+    "postinstall": "npm run install:client && npm run install:server",
+    "install:client": "cd client && npm install --include=dev",
+    "install:server": "cd server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristiania-pg6301-2022/pg6301-react-and-express-lectures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kristiania-pg6301-2022/pg6301-react-and-express-lectures/issues"
+  },
+  "homepage": "https://github.com/kristiania-pg6301-2022/pg6301-react-and-express-lectures#readme",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "ansi-regex": "^5.0.1",
+    "ansi-styles": "^4.3.0",
+    "chalk": "^4.1.2",
+    "color-name": "^1.1.4",
+    "cliui": "^7.0.4",
+    "color-convert": "^2.0.1",
+    "get-caller-file": "^2.0.5",
+    "date-fns": "^2.28.0",
+    "escalade": "^3.1.1",
+    "has-flag": "^4.0.0",
+    "emoji-regex": "^8.0.0",
+    "is-fullwidth-code-point": "^3.0.0",
+    "spawn-command": "^0.0.2-1",
+    "lodash": "^4.17.21",
+    "rxjs": "^6.6.7",
+    "require-directory": "^2.1.1",
+    "string-width": "^4.2.3",
+    "strip-ansi": "^6.0.1",
+    "supports-color": "^8.1.1",
+    "tree-kill": "^1.2.2",
+    "tslib": "^1.14.1",
+    "wrap-ansi": "^7.0.0",
+    "y18n": "^5.0.8",
+    "yargs": "^16.2.0",
+    "yargs-parser": "^20.2.9"
+  }
+}

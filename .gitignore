@@ -1,0 +1,7 @@
+.idea/
+.parcel-cache/
+dist/
+node_modules/
+/coverage/
+/server/.env
+/pg6301-exam.iml
