@@ -33,11 +33,11 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 
 * [x] Oppsett av package.json, parcel, express, prettier
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] React Router
+* [x] React Router
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Express app
+* [x] Express app
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Kommunikasjon mellom frontend (React) og backend (Express)
+* [x] Kommunikasjon mellom frontend (React) og backend (Express)
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [ ] Deployment til Heroku
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
