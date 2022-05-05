@@ -86,12 +86,13 @@ export function Application() {
         </header>
 
         <nav>
+          <h1 id={"sidebar-title"}>Nyheter</h1>
           <ListTopics />
         </nav>
 
         <main>
           <Routes>
-            <Route path={"/"} element={<FrontPage />} />
+            <Route path={"/"} element={<FrontPage user={data?.user} />} />
             <Route
               path={"/login/*"}
               element={<LoginPage config={data.config} reload={reload} />}

@@ -24,15 +24,21 @@ export function AddNewArticle({ user }) {
     return (
       <form onSubmit={handleSubmit}>
         <h1>Write an article here, {user.microsoft.name}</h1>
-        <FormInput label={"Title:"} value={title} onChangeValue={setTitle} />
-        <FormInput label={"Topic:"} value={topic} onChangeValue={setTopic} />
-        <FormInput
-          label={"Article text:"}
-          value={articleText}
-          onChangeValue={setArticleText}
-        />
+        <ul>
+          <FormInput label={"Title:"} value={title} onChangeValue={setTitle} />
+        </ul>
+        <ul>
+          <FormInput label={"Topic:"} value={topic} onChangeValue={setTopic} />
+        </ul>
+        <ul>
+          <FormInput
+            label={"Article text:"}
+            value={articleText}
+            onChangeValue={setArticleText}
+          />
+        </ul>
         <div>
-          <button onClick={() => setAuthor(user.microsoft.name)}>Submit</button>
+          <button onClick={() => setAuthor(user.microsoft.name)}>Finish</button>
         </div>
       </form>
     );
