@@ -2,12 +2,10 @@ import { act, Simulate } from "react-dom/test-utils";
 import ReactDOM from "react-dom";
 import React from "react";
 import { LoginPage } from "../pages/loginPage";
-import { UseContext } from "../useContext";
 import { MemoryRouter } from "react-router-dom";
 
 describe("login page", () => {
   it("redirect to log in with google", async () => {
-    // replace window.location to be able to detect redirects
     const location = new URL("https://www.example.com");
     delete window.location;
     window.location = new URL(location);
