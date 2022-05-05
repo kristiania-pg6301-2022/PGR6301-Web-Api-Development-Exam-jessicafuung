@@ -129,7 +129,7 @@ export function StartLogin({ config }) {
   return (
     <div>
       <ul>
-        <h1>Velg innlogginsmetode: </h1>
+        <h1>Vennligst velg innlogginsmetode: </h1>
         <LoginButton
           label={"Logg inn med Google konto"}
           config={config}

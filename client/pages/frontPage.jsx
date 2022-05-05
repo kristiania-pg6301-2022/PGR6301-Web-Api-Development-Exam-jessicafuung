@@ -8,7 +8,13 @@ export function ArticleCard({
   return (
     <>
       <ul>
-        Artikkel: {title} Forfatter: {author}
+        <h1>{title}</h1>{" "}
+        <p style={{ color: "gray" }}>
+          <u>
+            Forfatter: {author} &nbsp; Kategori: {topic}
+          </u>
+        </p>
+        <p> {articleText}</p>
       </ul>
     </>
   );
@@ -43,9 +49,13 @@ export function FrontPage({ user }) {
 
   if (!user || Object.keys(user).length === 0) {
     return (
-      <h1>
-        Logg inn eller registrer deg og få tilgang til aktuelle nyhetsartikler
-      </h1>
+      <div>
+        <h1>Velkommen til Fyrstikkposten!</h1>
+        <h2>
+          For å få tilgang til aktuelle nyhetsaker må du logge inn eller
+          registrer deg for å få tilgang{" "}
+        </h2>
+      </div>
     );
   }
 
