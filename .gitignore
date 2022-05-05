@@ -5,3 +5,5 @@ node_modules/
 /coverage/
 /server/.env
 /pg6301-exam.iml
+/client/coverage/
+/server/coverage/
