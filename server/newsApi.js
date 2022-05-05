@@ -43,7 +43,6 @@ export function NewsApi(mongoDatabase) {
         .collection("articles")
         .insertOne({ author, title, topic, dateTime, articleText });
       res.sendStatus(200);
-      console.log("Date print: " + dateTime);
     }
   });
 

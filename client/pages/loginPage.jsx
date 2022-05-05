@@ -85,7 +85,7 @@ export function EndSession({ reload }) {
   return <h1>Please wait...</h1>;
 }
 
-function LoginButton({ config, label, provider }) {
+export function LoginButton({ config, label, provider }) {
   async function handleLogin() {
     const {
       authorization_endpoint,
