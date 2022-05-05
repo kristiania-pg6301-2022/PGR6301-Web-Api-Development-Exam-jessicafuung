@@ -65,7 +65,8 @@ main {
     grid-area: content;
     margin-right: 0.5rem;
     font-family: "Microsoft Sans Serif";
-
+    overflow-y: auto;
+    padding: 1em;
 }
 
 footer {
@@ -85,10 +86,6 @@ footer {
 
 }
 
-main {
-    overflow-y: auto;
-    padding: 1em;
-}
 
 body {
     margin: 0;

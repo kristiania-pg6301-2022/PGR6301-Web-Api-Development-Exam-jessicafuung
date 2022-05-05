@@ -65,15 +65,13 @@ export function FrontPage({ user }) {
         <div>
           <form onSubmit={handleSubmitQuery}>
             {data.map((article) => (
-              <ul>
-                <button
-                  id="topic-query"
-                  value={topicQuery}
-                  onClick={(e) => setTopicQuery(article.topic)}
-                >
-                  {article.topic}
-                </button>
-              </ul>
+              <button
+                id="topic-query"
+                value={topicQuery}
+                onClick={(e) => setTopicQuery(article.topic)}
+              >
+                {article.topic}
+              </button>
             ))}
           </form>
         </div>
