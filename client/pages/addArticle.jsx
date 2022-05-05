@@ -1,24 +1,40 @@
 import React, { useContext, useState } from "react";
-import { FormInput } from "../lib/formInput";
 import { ApiContext } from "../useContext";
+import { useLoading } from "../useLoader";
 
 export function AddNewArticle({ user }) {
+  const { listArticles } = useContext(ApiContext);
   const { createArticle } = useContext(ApiContext);
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState();
   const [topic, setTopic] = useState("");
   const [articleText, setArticleText] = useState();
+  const { loading, error, data } = useLoading(
+    async () => await listArticles({ topic }),
+    [topic]
+  );
 
-  /*
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return (
+      <div>
+        <h1>Error</h1>
+        <div id="error-text">{error.toString()}</div>
+      </div>
+    );
+  }
+
   const refreshPage = () => {
     window.location.reload();
-  };*/
+  };
 
   function handleSubmit(event) {
-    console.log("Author" + author);
     event.preventDefault();
     createArticle({ author, title, topic, articleText });
-    /*refreshPage();*/
+    refreshPage();
   }
 
   if (user.microsoft !== undefined) {
@@ -29,7 +45,15 @@ export function AddNewArticle({ user }) {
 
           <ul>
             <p>Kategori:</p>
-            <FormInput value={topic} onChangeValue={setTopic} />
+            <select value={topic} onChange={(e) => setTopic(e.target.value)}>
+              {data.map((article) => {
+                return (
+                  <option key={article._id} value={article.value}>
+                    {article.topic}
+                  </option>
+                );
+              })}
+            </select>
           </ul>
 
           <ul>
