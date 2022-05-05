@@ -1,19 +1,30 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../useContext";
 import { useLoading } from "../useLoader";
+import { Link, useNavigate } from "react-router-dom";
 
-function TopicsCard({ topic }) {
+/* display topics in sidebar */
+export function TopicsCard({ article: { _id, topic } }) {
+  /* triggered when a clicked on a topic */
+  function handleSubmit(event) {
+    console.log("Handle submit: " + _id);
+    event.preventDefault();
+    setShowArticle(true);
+    /*ShowSelectedArticle(_id);*/
+  }
+
   return (
-    <>
+    <form onClick={handleSubmit}>
       <div>
         <ul>
-          <p>{topic}</p>
+          <Link to={"/news/selected"}>{topic}</Link>
         </ul>
       </div>
-    </>
+    </form>
   );
 }
 
+/* fetch from server  */
 export function ListTopics() {
   const { listArticles } = useContext(ApiContext);
   const [topic, setTopic] = useState("");
@@ -39,7 +50,7 @@ export function ListTopics() {
     <div>
       <h1 style={{ marginLeft: 40 }}>Topics: </h1>
       {data.map((article) => (
-        <TopicsCard key={article._id} topic={article.topic} />
+        <TopicsCard key={article._id} article={article} />
       ))}
     </div>
   );

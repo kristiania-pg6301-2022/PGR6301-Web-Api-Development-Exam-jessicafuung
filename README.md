@@ -25,31 +25,32 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 ## Egenutfylling av funksjonelle krav
 
 * [x] *Anonyme brukere skal se nyhetsaker når de kommer til nettsiden. Legg inn noen nyhetssaker for å demonstrere*
+* [ ] *Når en ny sak publiseres, skal alle brukerne få se den nye saken umiddelbart. Bruk websockets for å sende oppdateringer*
 * [x] *Brukere kan logge seg inn. Det anbefales at du implementerer at brukerne logger seg inn med Google, men andre mekanismer er også akseptabelt*
 * [x] *En bruker som er logget inn kan se på sin profilside (userinfo fra Google)*
 * [x] *Brukere skal forbli logget inn når de refresher websiden*
+* [ ] *En bruker som er logget inn kan klikke på en nyhetssak for å se detaljene om nyhetssaken. Detaljene skal inkludere en nyhetskategori, overskrift, tekst og navn på den som publiserte den*
 * [x] *"Redaksjonelle brukere" kan logge seg inn med Active Directory. Det må fungere å logge seg inn med en Active Directory på skolens AD ( domain_hint=egms.no )*
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-
+* [x] *Redaksjonelle brukere kan publisere nye nyhetsartikler*
+* [ ] *Nyhetsartikkel skal inneholde en kategori valgt fra en nedtrekksliste ( <select> ), tittel ( <input> ) og tekst ( <textarea> )*
+* 
 
 ## Egenutfylling av tekniske krav
 
 * [x] Oppsett av package.json, parcel, express, prettier
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] React Router
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Express app
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Kommunikasjon mellom frontend (React) og backend (Express)
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Deployment til Heroku
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Bruk av MongoDB
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] OpenID Connect
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [ ] Web Sockets
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [ ] Jest med dokumentert testdekning
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
- 
+
+## Bør-krav
+
+* [x] Brukeren ser kun menyvalg som de har tilgang til
+* [x] Brukere som går til en side de ikke har tilgang til blir bedt om å logge inn
+* [x] Brukere bør alltid se listen over artikler når de navigerer seg rundt på sidene
+* [ ] Github Actions bør beregne testcoverage. Testdekningen bør være over 50%. Bruk alle filer. Kun genererte filer som og dist skal ekskluderes
+

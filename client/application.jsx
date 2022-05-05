@@ -46,7 +46,7 @@ function UserActions({ user }) {
   if (user.microsoft !== undefined) {
     return (
       <>
-        <Link to={"/news/new"} class={"header-btn"}>
+        <Link to={"/news/write"} class={"header-btn"}>
           Write an article
         </Link>
         <Link to={"/profile"} class={"header-btn"}>
@@ -86,12 +86,10 @@ export function Application() {
         </header>
 
         <nav>
-          <h1>NAV BAR</h1>
           <ListTopics />
         </nav>
 
         <main>
-          <h1>Content</h1>
           <Routes>
             <Route path={"/"} element={<FrontPage />} />
             <Route
@@ -101,7 +99,7 @@ export function Application() {
             <Route path={"/profile"} element={<Profile user={data?.user} />} />
             <Route path={"/news"} element={<ListArticles />} />
             <Route
-              path={"/news/new"}
+              path={"/news/write"}
               element={<AddNewArticle user={data?.user} />}
             />
             <Route path={"*"} element={<h1>Not found</h1>} />

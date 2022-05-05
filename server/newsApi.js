@@ -5,11 +5,6 @@ export function NewsApi(mongoDatabase) {
 
   router.get("/", async (req, res) => {
     const query = {};
-
-    const { country } = req.query;
-    if (country) {
-      query.countries = { $in: [country] };
-    }
     const articles = await mongoDatabase
       .collection("articles")
       .find(query)
