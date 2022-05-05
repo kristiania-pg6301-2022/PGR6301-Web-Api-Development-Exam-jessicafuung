@@ -42,7 +42,11 @@ export function FrontPage({ user }) {
   }
 
   if (!user || Object.keys(user).length === 0) {
-    return <h1>Please login first</h1>;
+    return (
+      <h1>
+        Logg inn eller registrer deg og få tilgang til aktuelle nyhetsartikler
+      </h1>
+    );
   }
 
   if (user.google !== undefined || user.microsoft !== undefined) {

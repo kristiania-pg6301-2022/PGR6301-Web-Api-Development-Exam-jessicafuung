@@ -70,13 +70,17 @@ export function ListTopics() {
         <form onSubmit={handleSubmitQuery}>
           {data.map((article) => (
             <ul>
-              <h3
+              <div
                 id="topics-btn"
                 value={topicQuery}
                 onClick={(e) => setTopicQuery(article.topic)}
               >
-                {article.topic}
-              </h3>
+                <ul style={{ marginLeft: -50, marginRight: 18 }}>
+                  <h2>{article.title}</h2>{" "}
+                  <h3 style={{ color: "grey" }}>{article.topic}</h3>
+                  <p style={{ marginLeft: 10 }}>___________</p>
+                </ul>
+              </div>
             </ul>
           ))}
         </form>

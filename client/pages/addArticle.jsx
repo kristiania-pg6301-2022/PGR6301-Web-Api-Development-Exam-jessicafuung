@@ -23,22 +23,27 @@ export function AddNewArticle({ user }) {
   if (user.microsoft !== undefined) {
     return (
       <form onSubmit={handleSubmit}>
-        <h1>Write an article here, {user.microsoft.name}</h1>
+        <h1>Skriv din artikkel, {user.microsoft.name}</h1>
+
         <ul>
-          <FormInput label={"Title:"} value={title} onChangeValue={setTitle} />
+          <p>Din overskrift: </p>
+          <FormInput value={title} onChangeValue={setTitle} />
         </ul>
+
         <ul>
-          <FormInput label={"Topic:"} value={topic} onChangeValue={setTopic} />
+          <p>Kategori:</p>
+          <FormInput value={topic} onChangeValue={setTopic} />
         </ul>
+
         <ul>
-          <FormInput
-            label={"Article text:"}
-            value={articleText}
-            onChangeValue={setArticleText}
-          />
+          <p>Artikkel tekst: </p>
+          <FormInput value={articleText} onChangeValue={setArticleText} />
         </ul>
-        <div>
-          <button onClick={() => setAuthor(user.microsoft.name)}>Finish</button>
+
+        <div id={"finish-btn"}>
+          <button onClick={() => setAuthor(user.microsoft.name)}>
+            Publiser
+          </button>
         </div>
       </form>
     );

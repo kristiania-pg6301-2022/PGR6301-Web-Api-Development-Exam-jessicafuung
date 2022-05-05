@@ -1,4 +1,4 @@
-# PG6301 eksamen <tittel på løsningen>
+# PG6301 eksamen Fyrstikkposten
 
 * [x] [Heroku](https://pg6301-exam-2022.herokuapp.com)
 * [ ] [Test rapport](link til testrapport) !!!!

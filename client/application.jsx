@@ -17,9 +17,14 @@ import { AddNewArticle } from "./pages/addArticle";
 function UserActions({ user }) {
   if (!user || Object.keys(user).length === 0) {
     return (
-      <Link to={"/login"} class={"header-btn"}>
-        Login
-      </Link>
+      <div style={{ marginTop: 30 }}>
+        <Link to={"/login"} class={"header-btn"}>
+          Logg inn
+        </Link>
+        <Link to={"/login"} class={"header-btn"}>
+          Registrer deg
+        </Link>
+      </div>
     );
   }
 
@@ -34,10 +39,10 @@ function UserActions({ user }) {
           />
         </Link>
         <Link to={"/profile"} class={"header-btn"}>
-          {user.google?.name ? `Profile for ${user.google.name}` : "Profile"}
+          {user.google?.name ? `Profilen til ${user.google.name}` : "Profile"}
         </Link>
         <Link to={"/login/endsession"} class={"header-btn"}>
-          Log out
+          Logg ut
         </Link>
       </>
     );
@@ -47,15 +52,15 @@ function UserActions({ user }) {
     return (
       <>
         <Link to={"/news/write"} class={"header-btn"}>
-          Write an article
+          Skriv en artikkel
         </Link>
         <Link to={"/profile"} class={"header-btn"}>
           {user.microsoft?.name
-            ? `Profile for ${user.microsoft.name}`
+            ? `Profilen til ${user.microsoft.name}`
             : "Profile"}
         </Link>
         <Link to={"/login/endsession"} class={"header-btn"}>
-          Log out
+          Logg ut
         </Link>
       </>
     );
@@ -109,9 +114,9 @@ export function Application() {
 
         <footer>
           <p>
-            “This project exam has been completed as part of the education at
-            Kristiania University College. The college is not responsible for
-            the thesis' methods, results, conclusions or recommendations.”
+            “Denne prosjekteksamenen er gjennomført som en del av utdanningen
+            ved Høyskolen Kristiania. Høgskolen er ikke ansvarlig for oppgavens
+            metoder, resultater, konklusjoner eller anbefalinger.”
           </p>
         </footer>
       </div>
