@@ -1,17 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../useContext";
 import { useLoading } from "../useLoader";
-import { Link, useNavigate } from "react-router-dom";
+import { FrontPage } from "./frontPage";
 
 /* display topics in sidebar */
-export function TopicsCard({ article: { _id, topic } }) {
-  /* triggered when a clicked on a topic */
+export function TopicsCard({ article: { title, topic, author, articleText } }) {
+  /* triggered when a clicked on a topic
   function handleSubmit(event) {
     console.log("Handle submit: " + _id);
     event.preventDefault();
-    setShowArticle(true);
-    /*ShowSelectedArticle(_id);*/
-  }
+    /*ShowSelectedArticle(_id);}
+
 
   return (
     <form onClick={handleSubmit}>
@@ -21,6 +20,15 @@ export function TopicsCard({ article: { _id, topic } }) {
         </ul>
       </div>
     </form>
+  );*/
+
+  return (
+    <>
+      <h3>Inne i topics card:</h3>
+      <ul>
+        Artikkel: {title} Forfatter: {author}
+      </ul>
+    </>
   );
 }
 
@@ -28,10 +36,20 @@ export function TopicsCard({ article: { _id, topic } }) {
 export function ListTopics() {
   const { listArticles } = useContext(ApiContext);
   const [topic, setTopic] = useState("");
+  const [topicQuery, setTopicQuery] = useState("");
   const { loading, error, data } = useLoading(
     async () => await listArticles({ topic }),
     [topic]
   );
+
+  useEffect(async () => {
+    await FrontPage("text");
+  }, [setTopicQuery]);
+
+  function handleSubmitQuery(e) {
+    e.preventDefault();
+    setTopic(topicQuery);
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -48,10 +66,21 @@ export function ListTopics() {
 
   return (
     <div>
-      <h1 style={{ marginLeft: 40 }}>Topics: </h1>
-      {data.map((article) => (
-        <TopicsCard key={article._id} article={article} />
-      ))}
+      <div>
+        <form onSubmit={handleSubmitQuery}>
+          {data.map((article) => (
+            <ul>
+              <h3
+                id="topics-btn"
+                value={topicQuery}
+                onClick={(e) => setTopicQuery(article.topic)}
+              >
+                {article.topic}
+              </h3>
+            </ul>
+          ))}
+        </form>
+      </div>
     </div>
   );
 }

@@ -5,6 +5,12 @@ export function NewsApi(mongoDatabase) {
 
   router.get("/", async (req, res) => {
     const query = {};
+
+    const { topic } = req.query;
+    if (topic) {
+      query.topic = topic;
+    }
+
     const articles = await mongoDatabase
       .collection("articles")
       .find(query)
@@ -31,7 +37,7 @@ export function NewsApi(mongoDatabase) {
     ) {
       res.sendStatus(403);
     } else {
-      var dateTime = new Date();
+      let dateTime = new Date();
       const { author, title, topic, articleText } = req.body;
       mongoDatabase
         .collection("articles")
