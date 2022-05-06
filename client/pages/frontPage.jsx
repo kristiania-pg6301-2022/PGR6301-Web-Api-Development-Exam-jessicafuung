@@ -7,6 +7,10 @@ let chosen = "";
 export function ArticleCard({
   article: { title, topic, author, articleText },
 }) {
+  function refreshPage() {
+    window.location.reload();
+  }
+
   if (chosen === title) {
     return (
       <>
@@ -18,6 +22,7 @@ export function ArticleCard({
             </u>
           </p>
           <p> {articleText}</p>
+          <button onClick={refreshPage}>Tilbake til alle artiklene</button>
         </ul>
       </>
     );
@@ -69,6 +74,7 @@ export function FrontPage({ user }) {
   if (user.google !== undefined || user.microsoft !== undefined) {
     return (
       <div>
+        <div></div>
         <div>
           <form onSubmit={handleSubmitQuery}>
             {data.map((article) => (
