@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`login snapshot 1 1`] = `"<div><ul><h1>Vennligst velg innlogginsmetode: </h1><div><button>Logg inn med Google konto</button></div></ul><ul><div><button>Logg inn med Microsoft konto</button></div></ul></div>"`;
+exports[`login snapshot 1 1`] = `"<div><ul><h1>Vennligst velg innlogginsmetode: </h1><div><button>Logg inn med Google konto</button></div></ul><ul><div><button>Logg inn med ansatt-konto</button></div></ul></div>"`;
 
-exports[`login snapshot 2 1`] = `"<div><ul><h1>Vennligst velg innlogginsmetode: </h1><div><button>Logg inn med Google konto</button></div></ul><ul><div><button>Logg inn med Microsoft konto</button></div></ul></div>"`;
+exports[`login snapshot 2 1`] = `"<div><ul><h1>Vennligst velg innlogginsmetode: </h1><div><button>Logg inn med Google konto</button></div></ul><ul><div><button>Logg inn med ansatt-konto</button></div></ul></div>"`;
 
 exports[`login snapshot 3 1`] = `"<h1>Please wait...</h1>"`;
 
