@@ -138,7 +138,7 @@ export function StartLogin({ config }) {
       </ul>
       <ul>
         <LoginButton
-          label={"Logg inn med Microsoft konto"}
+          label={"Logg inn med ansatt-konto"}
           config={config}
           provider={"microsoft"}
         />
