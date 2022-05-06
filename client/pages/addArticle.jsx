@@ -27,11 +27,6 @@ export function AddNewArticle({ user }) {
     );
   }
 
-  /*
-  const refreshPage = () => {
-    window.location.reload();
-  };*/
-
   function handleSubmit(event) {
     event.preventDefault();
     createArticle({ author, title, topic, articleText });
