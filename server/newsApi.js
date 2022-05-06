@@ -6,13 +6,17 @@ export function NewsApi(mongoDatabase) {
   router.get("/", async (req, res) => {
     const query = {};
 
-    const { topic, title } = req.query;
+    const { topic, title, author } = req.query;
     if (topic) {
       query.topic = topic;
     }
 
     if (title) {
       query.title = title;
+    }
+
+    if (author) {
+      query.author = author;
     }
 
     const articles = await mongoDatabase
@@ -29,7 +33,11 @@ export function NewsApi(mongoDatabase) {
       .limit(100)
       .toArray();
 
-    res.json(articles);
+    if (articles.length >= 1) {
+      res.json(articles);
+    } else {
+      res.sendStatus(400);
+    }
   });
 
   router.post("/", async (req, res) => {
