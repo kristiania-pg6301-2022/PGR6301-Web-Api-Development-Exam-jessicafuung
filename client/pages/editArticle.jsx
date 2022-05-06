@@ -1,20 +1,31 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../useContext";
 import { useLoading } from "../useLoader";
 
-export function AddNewArticle({ user }) {
+let tmp = "";
+
+export function EditArticle({ user }) {
   const { listArticles } = useContext(ApiContext);
-  const { createArticle } = useContext(ApiContext);
+  const { editArticle } = useContext(ApiContext);
 
   const [author, setAuthor] = useState("");
-  const [title, setTitle] = useState();
+  const [oldTitle, setOldTitle] = useState("");
+  const [newTitle, setNewTitle] = useState("");
   const [topic, setTopic] = useState("");
   const [articleText, setArticleText] = useState();
 
   const { loading, error, data } = useLoading(
-    async () => await listArticles({ topic }),
-    [topic]
+    async () => await listArticles({ author }),
+    [author]
   );
+
+  const { name } = user.microsoft;
+
+  useEffect(() => {
+    if (user.microsoft !== undefined) {
+      setAuthor(name);
+    }
+  }, [1]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -23,7 +34,7 @@ export function AddNewArticle({ user }) {
   if (error) {
     return (
       <div>
-        <h1>Error</h1>
+        <h1>Error: Du har ikke noen artikler å redigere</h1>
         <div id="error-text">{error.toString()}</div>
       </div>
     );
@@ -31,17 +42,31 @@ export function AddNewArticle({ user }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    createArticle({ author, title, topic, articleText });
+    editArticle({ author, newTitle, oldTitle, topic, articleText });
   }
 
-  if (user.microsoft !== undefined) {
+  if (author === name) {
     return (
       <>
         <form onSubmit={handleSubmit}>
-          <h1>Skriv din artikkel, {user.microsoft.name}</h1>
+          <ul>
+            <p>Velg artikkel: </p>
+            <select
+              value={oldTitle}
+              onChange={(e) => setOldTitle(e.target.value)}
+            >
+              {data.map((a) => {
+                return (
+                  <option key={a._id} value={a.value}>
+                    {a.title}
+                  </option>
+                );
+              })}
+            </select>
+          </ul>
 
           <ul>
-            <p>Kategori:</p>
+            <p>Endre kategori:</p>
             <select value={topic} onChange={(e) => setTopic(e.target.value)}>
               <option value={"Politikk"}>Politikk</option>
               <option value={"Helse"}>Helse</option>
@@ -52,16 +77,16 @@ export function AddNewArticle({ user }) {
           </ul>
 
           <ul>
-            <p>Din overskrift: </p>
+            <p>Rediger overskrift: </p>
             <input
               required={"required"}
-              value={title}
-              onChange={(event) => setTitle(event.target.value)}
+              value={newTitle}
+              onChange={(event) => setNewTitle(event.target.value)}
             />
           </ul>
 
           <ul>
-            <p>Artikkel tekst: </p>
+            <p>Rediger tekst: </p>
             <textarea
               required={"required"}
               value={articleText}
@@ -80,13 +105,7 @@ export function AddNewArticle({ user }) {
         </form>
       </>
     );
-  }
-
-  if (user.google !== undefined) {
-    return <h1>You have no access to this action! Please login first</h1>;
-  }
-
-  if (!user || Object.keys(user).length === 0) {
-    return <h1>You have no access to this action! Please login first </h1>;
+  } else {
+    return <div></div>;
   }
 }

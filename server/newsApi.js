@@ -63,5 +63,17 @@ export function NewsApi(mongoDatabase) {
     }
   });
 
+  router.post("/edit", async (req, res) => {
+    const { oldTitle, newTitle, topic, articleText } = req.body;
+
+    const changeTitle = { title: oldTitle };
+    const changeAll = {
+      $set: { title: newTitle, topic: topic, articleText: articleText },
+    };
+
+    mongoDatabase.collection("articles").updateOne(changeTitle, changeAll);
+    res.sendStatus(200);
+  });
+
   return router;
 }
