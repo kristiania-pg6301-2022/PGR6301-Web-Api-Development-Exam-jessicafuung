@@ -49,3 +49,6 @@
 
 ## Bilder av test:coverage
 Finner dem i images-mappen på root (PG6301-exam-folder/pg6301-exam/images).
+
+## Ekstra
+Jeg har lagt inn lite easter egg hvis du klarer å finne :)
