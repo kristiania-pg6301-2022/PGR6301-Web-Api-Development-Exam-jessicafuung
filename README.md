@@ -48,4 +48,4 @@
 * [x] Brukere bør alltid se listen over artikler når de navigerer seg rundt på sidene
 
 ## Bilder av test:coverage
-Finner dem i .zip mappen
+Finner dem i images-mappen på root (PG6301-exam-folder/pg6301-exam/images).
