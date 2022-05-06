@@ -1,5 +1,4 @@
 #app {
-    display: grid;
     height: 100vh;
     grid-template-rows: auto 1fr;
 }
@@ -50,9 +49,6 @@ a:hover {
     height: 100vh;
 }
 
-header {
-    grid-area: header;
-}
 
 nav {
     background-color: white;
@@ -86,12 +82,13 @@ footer {
 
 }
 
-
 body {
     margin: 0;
 }
 
 header {
+    grid-area: header;
+
     background-color: white;
     background-image: linear-gradient(#b2fefa,#ffffff);
     padding: 0.5em 1em;
