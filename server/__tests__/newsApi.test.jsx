@@ -5,12 +5,12 @@ import request from "supertest";
 import dotenv from "dotenv";
 import { NewsApi } from "../newsApi";
 
+dotenv.config();
+
 const app = express();
 app.use(bodyParser.json());
 
-const mongoClient = new MongoClient(
-  "mongodb+srv://jessicafuung:stress123ball@cluster0.2m1ly.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-);
+const mongoClient = new MongoClient(process.env.MONGODB_URL);
 
 function randomString(length) {
   const possible =
@@ -25,7 +25,7 @@ function randomString(length) {
 beforeAll(async () => {
   await mongoClient.connect();
   const database = mongoClient.db("unit_tests");
-  await database.collection("movies").deleteMany({});
+  await database.collection("articles").deleteMany({});
   app.use("/api/news", NewsApi(database));
 });
 afterAll(() => {
