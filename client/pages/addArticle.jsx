@@ -30,7 +30,6 @@ export function AddNewArticle({ user }) {
   function handleSubmit(event) {
     event.preventDefault();
     createArticle({ author, title, topic, articleText });
-    /*refreshPage();*/
   }
 
   if (user.microsoft !== undefined) {
@@ -42,19 +41,18 @@ export function AddNewArticle({ user }) {
           <ul>
             <p>Kategori:</p>
             <select value={topic} onChange={(e) => setTopic(e.target.value)}>
-              {data.map((article) => {
-                return (
-                  <option key={article._id} value={article.value}>
-                    {article.topic}
-                  </option>
-                );
-              })}
+              <option value={"Politikk"}>Politikk</option>
+              <option value={"Helse"}>Helse</option>
+              <option value={"Miljø"}>Miljø</option>
+              <option value={"Natur"}>Natur</option>
+              <option value={"Sport"}>Sport</option>
             </select>
           </ul>
 
           <ul>
             <p>Din overskrift: </p>
             <input
+              required={"required"}
               value={title}
               onChange={(event) => setTitle(event.target.value)}
             />
@@ -63,6 +61,7 @@ export function AddNewArticle({ user }) {
           <ul>
             <p>Artikkel tekst: </p>
             <textarea
+              required={"required"}
               value={articleText}
               onChange={(event) => setArticleText(event.target.value)}
             />
