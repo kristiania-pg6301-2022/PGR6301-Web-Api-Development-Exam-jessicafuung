@@ -1,7 +1,8 @@
 # PG6301 eksamen Fyrstikkposten
 
 * [x] [Heroku](https://pg6301-exam-2022.herokuapp.com)
-* [ ] [Test rapport](link til testrapport) !!!!
+* [x] [GitHub repository](https://github.com/kristiania-pg6301-2022/pgr6301-exam-jessicafuung) 
+* Ingen link til test rapport pga Github Actions gikk tom for minutter natten før innlevering. 
 
 ## Egenutfylling av funksjonelle krav
 
