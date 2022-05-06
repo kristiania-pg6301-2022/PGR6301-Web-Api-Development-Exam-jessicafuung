@@ -6,9 +6,13 @@ export function NewsApi(mongoDatabase) {
   router.get("/", async (req, res) => {
     const query = {};
 
-    const { topic } = req.query;
+    const { topic, title } = req.query;
     if (topic) {
       query.topic = topic;
+    }
+
+    if (title) {
+      query.title = title;
     }
 
     const articles = await mongoDatabase
@@ -24,21 +28,26 @@ export function NewsApi(mongoDatabase) {
       }))
       .limit(100)
       .toArray();
+
     res.json(articles);
   });
 
-  router.post("/", (req, res) => {
-    const { google_access_token, microsoft_access_token } = req.signedCookies;
-    console.log(google_access_token + microsoft_access_token);
+  router.post("/", async (req, res) => {
+    let dateTime = new Date();
+    const { author, title, topic, articleText } = req.body;
+    const query = { title };
 
-    if (
-      google_access_token === undefined &&
-      microsoft_access_token === undefined
-    ) {
-      res.sendStatus(403);
+    const articleTitle = await mongoDatabase
+      .collection("articles")
+      .find(query)
+      .map(({ title }) => ({
+        title,
+      }))
+      .toArray();
+
+    if (articleTitle.length >= 1) {
+      res.sendStatus(400);
     } else {
-      let dateTime = new Date();
-      const { author, title, topic, articleText } = req.body;
       mongoDatabase
         .collection("articles")
         .insertOne({ author, title, topic, dateTime, articleText });
