@@ -34,7 +34,7 @@ export function EditArticle({ user }) {
   if (error) {
     return (
       <div>
-        <h1>Error: Du har ikke noen artikler å redigere</h1>
+        <h1>Du har ikke noen artikler å redigere</h1>
         <div id="error-text">{error.toString()}</div>
       </div>
     );
