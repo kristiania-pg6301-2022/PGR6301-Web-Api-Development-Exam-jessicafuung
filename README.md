@@ -11,9 +11,10 @@
 * [x] *En bruker som er logget inn kan se på sin profilside (userinfo fra Google)*
 * [x] *Brukere skal forbli logget inn når de refresher websiden*
 * [x] *En bruker som er logget inn kan klikke på en nyhetssak for å se detaljene om nyhetssaken. Detaljene skal inkludere en nyhetskategori, overskrift, tekst og navn på den som publiserte den*
+    * *Har utført en forenkling på dette punktet når brukeren er innlogget. Fikk dessverre litt lite tid til å flytte knappene (med titlene) til sidebaren etter innlogging. Det var tiltenkt at dersom brukeren ikke er innlogget, får de kun se nyhetstitlene, og etter innlogging vil sidebaren ha klikkbare titler.*
 * [x] *"Redaksjonelle brukere" kan logge seg inn med Active Directory. Det må fungere å logge seg inn med en Active Directory på skolens AD ( domain_hint=egms.no )*
 * [x] *Redaksjonelle brukere kan publisere nye nyhetsartikler*
-* [x] *Nyhetsartikkel skal inneholde en kategori valgt fra en nedtrekksliste ( <select> ), tittel ( <input> ) og tekst ( <textarea> )*
+* [x] *Nyhetsartikkel skal inneholde en kategori valgt fra en nedtrekksliste "select", tittel "input" og tekst "textarea"*
 * [x] *Dersom noen allerede har publisert en nyhetsartikkel med samme tittel skal serveren sende HTTP status kode 400 og en*
 * [x] *En bruker som er logget inn kan klikke på en nyhetssak for å se detaljene om nyhetssaken. Detaljene skal inkludere en nyhetskategori, overskrift, tekst og navn på den som publiserte den*
 * [x] *Brukeren skal forhindres fra å sende inn en nyhetsartikkel som mangler kategori, tittel eller tekst*
