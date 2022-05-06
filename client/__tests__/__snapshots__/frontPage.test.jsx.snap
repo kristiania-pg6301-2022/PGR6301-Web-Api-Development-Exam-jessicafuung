@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Front page snapshot1 1`] = `"<div>Loading...</div>"`;
+
+exports[`Front page snapshot2 1`] = `"<h1>Vennligst logg inn først</h1>"`;
