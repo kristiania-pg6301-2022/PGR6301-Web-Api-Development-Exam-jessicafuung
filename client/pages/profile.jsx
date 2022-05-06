@@ -10,7 +10,7 @@ export function Profile({ user }) {
     const { name, email, picture } = user.google;
 
     return (
-      <div id={"profile-div"}>
+      <div className={"profile-div"}>
         <h1>Din side</h1>
         <div>
           <img src={picture} />
@@ -22,12 +22,11 @@ export function Profile({ user }) {
   }
 
   if (user.microsoft !== undefined) {
-    const { name, email, picture } = user.microsoft;
+    const { name, email } = user.microsoft;
     return (
-      <div className={"CenterDiv"}>
+      <div className={"profile-div"}>
         <h1>Din side</h1>
         <div>
-          <img src={picture} />
           <p>Fullt navn: {name}</p>
           <p>Epost adresse: {email}</p>
         </div>

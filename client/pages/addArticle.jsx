@@ -43,9 +43,9 @@ export function AddNewArticle({ user }) {
           <ul>
             <p>Kategori:</p>
             <select value={topic} onChange={(e) => setTopic(e.target.value)}>
+              <option value={"empty"}>Velg</option>
               <option value={"Politikk"}>Politikk</option>
               <option value={"Helse"}>Helse</option>
-              <option value={"Miljø"}>Miljø</option>
               <option value={"Natur"}>Natur</option>
               <option value={"Sport"}>Sport</option>
             </select>

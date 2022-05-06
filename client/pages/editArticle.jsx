@@ -55,6 +55,7 @@ export function EditArticle({ user }) {
               value={oldTitle}
               onChange={(e) => setOldTitle(e.target.value)}
             >
+              <option value={"empty"}>Velg</option>
               {data.map((a) => {
                 return (
                   <option key={a._id} value={a.value}>
@@ -68,9 +69,9 @@ export function EditArticle({ user }) {
           <ul>
             <p>Endre kategori:</p>
             <select value={topic} onChange={(e) => setTopic(e.target.value)}>
+              <option value={"empty"}>Velg</option>
               <option value={"Politikk"}>Politikk</option>
               <option value={"Helse"}>Helse</option>
-              <option value={"Miljø"}>Miljø</option>
               <option value={"Natur"}>Natur</option>
               <option value={"Sport"}>Sport</option>
             </select>
